@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Kotlin_Atv4</string>
+    <string name="tvName">Name</string>
+    <string name="tvCourse">Course</string>
+    <string name="tvDemand">Demand</string>
+    <string name="chbox1">Study</string>
+    <string name="chbox2">Class</string>
+    <string name="rdbtnBcc">BCC - Bacharelado em Ciencia da computacao</string>
+    <string name="rdbtnBsi">BSI - Bacharelado em Sistema da Informacao</string>
+</resources>
