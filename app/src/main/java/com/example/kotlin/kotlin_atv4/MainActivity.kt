@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.os.PersistableBundle
 import android.view.View
+import android.widget.RadioGroup
 import kotlinx.android.synthetic.main.activity_radio.*
 
 class MainActivity : AppCompatActivity() {
@@ -15,16 +16,6 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
-        //val i = Intent(this, RadioActivity::class.java)
-
-        //refreshText(i.getIntExtra("result",0 ))
-
-//        if ((i.getIntExtra("result") != null)
-//                && (savedInstanceState.getInt("result") != null)){
-//            refreshText(savedInstanceState.get("result") as Int)
-//        }
-
 
     }
 
@@ -50,8 +41,7 @@ class MainActivity : AppCompatActivity() {
 
     fun gotoRadioActivity(view : View){
         val intent = Intent(applicationContext,RadioActivity::class.java)
-        // intent.putExtra("input",editText.text.toString())
-        startActivity(intent)
+        startActivityForResult(intent, this.result!!)
     }
 
 

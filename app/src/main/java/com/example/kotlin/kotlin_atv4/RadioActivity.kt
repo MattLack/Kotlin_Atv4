@@ -8,6 +8,8 @@ import android.widget.RadioButton
 import kotlinx.android.synthetic.main.activity_radio.*
 import kotlinx.android.synthetic.main.activity_radio.view.*
 
+
+
 class RadioActivity : AppCompatActivity() {
 
     var result: Int? = 0
@@ -17,7 +19,6 @@ class RadioActivity : AppCompatActivity() {
         setContentView(R.layout.activity_radio)
 
         rdgroup.rdbtnBcc.isChecked = true
-
 
     }
 
@@ -34,16 +35,15 @@ class RadioActivity : AppCompatActivity() {
 
     fun gotoMainActivity(view: View) {
         val intent = Intent(applicationContext, MainActivity::class.java)
-           // val radio: RadioButton = view.findViewById(rdgroup.checkedRadioButtonId)
-            var id: Int = rdgroup.checkedRadioButtonId
-            //val radio: RadioButton = findViewById(id)
-            intent.putExtra("result", id)
-            startActivity(intent)
+       // val it = Intent()
+        when {
+            rdbtnBcc.isChecked -> setResult(1, intent)
+            rdbtnBsi.isChecked -> setResult(2, intent)
+            rdbtnLc.isChecked -> setResult(3, intent)
+        }
+        finish()
+        //startActivity(intent)
     }
 
-    override fun startActivityForResult(intent: Intent?, requestCode: Int) {
-        super.startActivityForResult(intent, requestCode)
-
-    }
 
 }
